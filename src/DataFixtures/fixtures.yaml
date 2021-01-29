@@ -1,0 +1,23 @@
+
+App\Entity\Comment:
+    comment_{1..50}:
+        content (unique): '<text()>'
+        author: '@user_*'
+
+App\Entity\User:
+    user_{1..25}:
+        username: '<username()>'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$aEdOWmFKS2Z1azcuQjJMbw\$RX5kgbUl1m4FsN3SmD9WpHatj6sV+bBuiu8o7edK4l8'
+
+    admin:
+        username: 'Administrateur'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$aEdOWmFKS2Z1azcuQjJMbw\$RX5kgbUl1m4FsN3SmD9WpHatj6sV+bBuiu8o7edK4l8'
+
+App\Entity\Serie:
+    serie_{1..10}:
+        name: '<company()>'
+        description: '<sentence(3)>'
+        seasons: '<numberBetween(1, 12)>'
+        critical: '<sentence(6)>'
+        poster: '<imageUrl(1280, 720, "cats")>'
+        comments: '<numberBetween(3, 15)>x @comment_*'
