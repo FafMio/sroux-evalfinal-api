@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=SerieRepository::class)
  * 
- * @ApiResource()
+ * @ApiResource(normalizationContext={"groups"={"comment"}})
  */
 class Serie
 {
@@ -21,42 +21,49 @@ class Serie
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"comment"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"comment"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"comment"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"comment"})
      */
     private $seasons;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"comment"})
      */
     private $critical;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups({"comment"})
      */
     private $release_date;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"comment"})
      */
     private $poster;
 
     /**
-     * @ApiSubresource()
      * @ORM\ManyToMany(targetEntity=Comment::class, inversedBy="series")
+     * @Groups({"comment"})
      */
     private $comments;
 

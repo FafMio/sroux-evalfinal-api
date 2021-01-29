@@ -20,22 +20,26 @@ class Comment
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"comment"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"comment"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"comment"})
      */
     private $created_at;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"comment"})
      */
     private $author;
 
