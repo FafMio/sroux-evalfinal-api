@@ -16,8 +16,8 @@ App\Entity\User:
 App\Entity\Serie:
     serie_{1..10}:
         name: '<company()>'
-        description: '<sentence(3)>'
+        description: '<sentence(100)>'
         seasons: '<numberBetween(1, 12)>'
-        critical: '<sentence(6)>'
-        poster: '<imageUrl(1280, 720, "cats")>'
+        critical: '<sentence(100)>'
+        poster: 'https://placehold.it/1000x1400 '
         comments: '<numberBetween(3, 15)>x @comment_*'
