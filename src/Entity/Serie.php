@@ -21,7 +21,7 @@ class Serie
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"comment"})
+     * @Groups({"comment"}) 
      */
     private $id;
 
