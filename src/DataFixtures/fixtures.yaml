@@ -1,12 +1,13 @@
 
 App\Entity\Comment:
-    comment_{1..50}:
+    comment_{1..10}:
         content (unique): '<text()>'
         author: '@user_*'
+        series: '1x @serie_*'
 
 App\Entity\User:
     user_{1..25}:
-        username: '<username()>'
+        username (unique): '<username()>'
         password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$aEdOWmFKS2Z1azcuQjJMbw\$RX5kgbUl1m4FsN3SmD9WpHatj6sV+bBuiu8o7edK4l8'
 
     admin:
@@ -15,9 +16,8 @@ App\Entity\User:
 
 App\Entity\Serie:
     serie_{1..10}:
-        name: '<company()>'
+        name (unique): '<company()>'
         description: '<sentence(100)>'
         seasons: '<numberBetween(1, 12)>'
         critical: '<sentence(100)>'
         poster: 'https://placehold.it/1000x1400 '
-        comments: '<numberBetween(3, 15)>x @comment_*'
