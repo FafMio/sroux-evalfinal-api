@@ -45,6 +45,7 @@ class Comment
 
     /**
      * @ORM\ManyToMany(targetEntity=Serie::class, mappedBy="comments")
+     * @Groups({"comment"})
      */
     private $series;
 
