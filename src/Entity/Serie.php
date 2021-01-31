@@ -50,7 +50,7 @@ class Serie
     private $critical;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="date")
      * @Groups({"comment"})
      */
     private $release_date;
@@ -126,12 +126,12 @@ class Serie
         return $this;
     }
 
-    public function getReleaseDate(): ?string
+    public function getReleaseDate(): ?\DateTimeInterface
     {
         return $this->release_date;
     }
 
-    public function setReleaseDate(string $release_date): self
+    public function setReleaseDate(\DateTimeInterface $release_date): self
     {
         $this->release_date = $release_date;
 
