@@ -69,7 +69,7 @@ class Serie
 
     public function __construct()
     {
-        //$this->release_date = ($this->release_date === null) ? new \DateTime() : $this->release_date;
+        $this->release_date = ($this->release_date === null) ? new \DateTime() : $this->release_date;
         $this->comments = new ArrayCollection();
     }
 
