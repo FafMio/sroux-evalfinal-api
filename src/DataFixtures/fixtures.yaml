@@ -20,4 +20,5 @@ App\Entity\Serie:
         description: '<sentence(100)>'
         seasons: '<numberBetween(1, 12)>'
         critical: '<sentence(100)>'
-        poster: 'https://placehold.it/1000x1400 '
+        poster: 'https://placehold.it/1000x1400'
+        release_date: '2021/01/24'
